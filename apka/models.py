@@ -22,8 +22,8 @@ class Entry(models.Model):
     text = models.TextField(verbose_name='Tekst artykułu')
 	
     date_added = models.DateTimeField(auto_now_add=True)
-    width = models.CharField(max_length=200, verbose_name='Szerokość zdjęcia', default='szerokość')
-    height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='wysokość')
+    width = models.CharField(max_length=200, verbose_name='Szerokość zdjęcia', default='400')
+    height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='200')
     foto = models.CharField(max_length=200, verbose_name='Zdjęcie', default='link do zdjęcia')
 
 
