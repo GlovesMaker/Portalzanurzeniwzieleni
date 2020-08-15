@@ -7,10 +7,16 @@
 lalala to jest to
 
 <p>Topic:{{ x }}</p>
-<p>Entries:</p>
+asd
+
+
+
+
+</ul>
 <ul>
     {% for y in entries %}
     <li>
+<img   src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>
         <p>{{ y.date_added|date:'M d,Y H:i' }}</p>
         <p>{{ y.text|linebreaks }}</p>
     </li>

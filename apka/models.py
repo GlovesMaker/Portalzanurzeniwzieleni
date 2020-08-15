@@ -9,7 +9,7 @@ class Topic(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        #verbose_name_plural = 'Temat artykułu'
+        verbose_name_plural = 'Tematy'
         ordering = ('-date_added',)
         
     def __str__(self):
@@ -20,10 +20,15 @@ class Entry(models.Model):
 # Create your models here.
     topic = models.ForeignKey(Topic, verbose_name='Tytuł artykułu')
     text = models.TextField(verbose_name='Tekst artykułu')
+	
     date_added = models.DateTimeField(auto_now_add=True)
+    width = models.CharField(max_length=200, verbose_name='Szerokość zdjęcia', default='szerokość')
+    height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='wysokość')
+    foto = models.CharField(max_length=200, verbose_name='Zdjęcie', default='link do zdjęcia')
+
 
     class Meta:
-        verbose_name_plural = 'entries'
+        verbose_name_plural = 'Artykuły'
         ordering = ('-date_added',)
         
     def __str__(self):
