@@ -1,0 +1,24 @@
+{% extends "apka/base.html" %}	
+
+
+
+
+<a href="{% url 'apka:home' %}"> APKA </a>
+
+
+{% block content %}	
+
+<p>TEMATY </p>
+
+<ul>
+
+{% for x in topics %}
+<li> 
+<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
+</li>
+{% empty %}
+<li> nie ma nic jeszcze XD. </li>
+{% endfor %}
+</ul>
+
+{% endblock content%}	

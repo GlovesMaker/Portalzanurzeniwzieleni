@@ -1,0 +1,24 @@
+{% extends "apka/base.html" %}	
+
+{% block content %}	
+
+
+
+lalala to jest to
+
+<p>Topic:{{ x }}</p>
+<p>Entries:</p>
+<ul>
+    {% for y in entries %}
+    <li>
+        <p>{{ y.date_added|date:'M d,Y H:i' }}</p>
+        <p>{{ y.text|linebreaks }}</p>
+    </li>
+    {% empty %}
+    <li>
+        nic tu jeszcze nie ma XD
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
