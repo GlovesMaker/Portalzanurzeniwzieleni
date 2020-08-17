@@ -1,30 +1,50 @@
 
 <style>
-input {
-  width: 40%;
-  
+input
+{
+border: 1px solid black;
+margin-bottom:5px;
+margin: 4px 2px;
+width: 70%;
+
+}
+
+#button_search 
+{
+  background-color: #f4511e;
+  border: 1px solid black;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+ 
 }
 
 
 </style>
 
+
+
 {% extends "apka/base.html" %}	
 
 {% block content %}	
-
+<div class="h1_db">Wyszukiwarka</div>
 <center>
 <form method='post' action="/search/">
 
 {% csrf_token %}
-<input type='text' name="srh"  placeholder='Wyszukaj...'/>
+<input style="height: 5%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
 <br>
 
 
-<input type='submit' class="btn btn-outline-info " value='Wyszukaj' />
+<input id="button_search" type='submit' value='Wyszukaj' />
 </form>
+</center>
 
-
-
+<div class="h1_db"> Wynik wyszukiwania:</div>
 <div>
 {% if messages %}
 	<div class="messanges">
@@ -46,5 +66,5 @@ input {
 		
 	{% endif %}
 </div>
-</center>
+
 {% endblock content %}
