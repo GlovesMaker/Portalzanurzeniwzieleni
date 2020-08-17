@@ -1,21 +1,35 @@
-<h1>
-Wyszukaj dobry temat
-</h1>
 
+<style>
+input {
+  width: 50%;
+  
+}
+
+
+</style>
+
+{% extends "apka/base.html" %}	
+
+{% block content %}	
+
+<center>
 <form method='post' action="/search/">
 
 {% csrf_token %}
 <input type='text' name="srh"  placeholder='Wyszukaj...'/>
-<input type='submit' value='Wyszukaj' />
+<br>
+
+
+<input type='submit' class="btn btn-outline-info " value='Wyszukaj' />
 </form>
+</center>
 
 
-<ul>
 <div>
 {% if messages %}
 	<div class="messanges">
 	{% for k in messages %}
-	<li> {{k}}</li>
+	<ol>{{k}}</ol>
 	{% endfor %}
 	</div>
 {% endif %}
@@ -24,13 +38,13 @@ Wyszukaj dobry temat
 <div>
 	{% if sr %}
 		{% for x in sr %}
-		<li> 
+		<ol> 
 		<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
-		</li>
-		{% empty %}
-		<li> nie ma nic jeszcze XD. jestem tu
-		</li>
+		</ol>
+
 		{% endfor %}
-		</ul>
+		
 	{% endif %}
 </div>
+
+{% endblock content %}

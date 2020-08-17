@@ -1,32 +1,41 @@
+<style>
+
+#container_topics
+
+	{
+	text-align:center;	
+	font-size: 20px;
+	/* border: 1px solid blue; */
+	}	
+
+#article_topics
+
+	{
+	text-align:justify;	
+	
+	padding: 0 3% 2% 3%;
+	border: 1px solid black;
+	}	
+</style>
+
 {% extends "apka/base.html" %}	
-
-
-
-
-
 
 
 {% block content %}	
 
-alala to jest tylko tu
-
-<p>Artykuły{{ x }}</p>
-
-
-
-</ul>
-<ul>
+<div id="container_topics">
     {% for y in entries %}
-    <li>
-<img   src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>
-        <p>{{ y.date_added|date:'M d,Y H:i' }}</p>
-        <p>{{ y.text|linebreaks }}</p>
-    </li>
+
+		<img src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>
+			<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
+		<div id="article_topics">
+			<span style="text-align:l; font-size:15px;">{{ y.text }}</span>
+		</div>
     {% empty %}
-    <li>
-        nic tu jeszcze nie ma XD
-    </li>
+
+        Pracujemy nad tym ...
+
     {% endfor %}
-</ul>
+</div>
 
 {% endblock content %}
