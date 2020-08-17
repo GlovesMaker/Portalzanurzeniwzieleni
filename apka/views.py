@@ -45,7 +45,7 @@ def search(request):
 		if srch:
 		
 			match = Topic.objects.filter(Q(text__icontains=srch))
-			#match_1 = Topic.objects.filter(Q(text__icontains=srch))
+			#match_1 = Entry.objects.filter(Q(text__icontains=srch))
 			if match:
 				return render(request, 'apka/search.html', {'sr':match})	
 			else:

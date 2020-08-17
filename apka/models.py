@@ -25,7 +25,7 @@ class Entry(models.Model):
     width = models.CharField(max_length=200, verbose_name='Szerokość zdjęcia', default='100%')
     height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='20%')
     foto = models.CharField(max_length=200, verbose_name='Zdjęcie', default='link do zdjęcia')
-
+	#id_topic = height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='20%')
 
     class Meta:
         verbose_name_plural = 'Artykuły'
