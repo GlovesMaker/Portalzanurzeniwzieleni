@@ -23,19 +23,49 @@
 
 {% block content %}	
 
-<div id="container_topics">
-    {% for y in entries %}
+<div class="laptop">
 
-		<img src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>
-			<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
-		<div id="article_topics">
-			<span style="text-align:l; font-size:15px;">{{ y.text }}</span>
+	<div id="container_topics">
+		{% for y in entries %}
+
+			<img src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>	
+
+				<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
+			<div id="article_topics">
+				<span style="text-align:l; font-size:15px;">{{ y.text }}</span>
+			</div>
+		{% empty %}
+
+			Pracujemy nad tym ...
+
+		{% endfor %}
+
+	
 		</div>
-    {% empty %}
+</div>	
+	
 
-        Pracujemy nad tym ...
 
-    {% endfor %}
-</div>
+<div class="telefon">
+
+	<div id="container_topics">
+		{% for y in entries %}
+
+			<img src="{{ y.foto }}" width=70% " height="30% " </img>	
+
+				<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
+			<div id="article_topics">
+				<span style="text-align:l; font-size:15px;">{{ y.text }}</span>
+			</div>
+		{% empty %}
+
+			Pracujemy nad tym ...
+
+		{% endfor %}
+
+	
+		</div>
+
+</div>	
 
 {% endblock content %}
