@@ -24,7 +24,7 @@ class Entry(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     width = models.CharField(max_length=200, verbose_name='Szerokość zdjęcia', default='400')
     height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='200')
-    foto = models.CharField(max_length=500, verbose_name='Zdjęcie', default='link do zdjęcia')
+    foto = models.CharField(max_length=200, verbose_name='Zdjęcie', default='link do zdjęcia')
 
 
     class Meta:
@@ -33,3 +33,5 @@ class Entry(models.Model):
         
     def __str__(self):
         return self.text[:50]+'...'
+
+

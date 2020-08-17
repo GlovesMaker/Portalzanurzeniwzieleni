@@ -1,8 +1,7 @@
 <html lang="pl">
 
 <head>
-	<!-- Search Console -->
-	
+		
 	
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -12,10 +11,15 @@
 
 <h1 style="color:green"> Zanurzeni w zieleni </h1>
 
+to pokazuje się wszędzie <br>
+<a href="{% url 'apka:home' %}"> Home </a><br>
 
+<br><br><br>
 
-<a href="{% url 'apka:home' %}"> APKA </a>
+tutaj możesz wyszukać konkretny temat - to kosztowało mnie dużo pracy ^^  <br>
+<a href="{% url 'apka:search' %}"> Wyszukaj dobry temat</a><br>
 
+<br><br><br>
 
 {% block content %}	
 

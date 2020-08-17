@@ -1,0 +1,36 @@
+<h1>
+Wyszukaj dobry temat
+</h1>
+
+<form method='post' action="/search/">
+
+{% csrf_token %}
+<input type='text' name="srh"  placeholder='Wyszukaj...'/>
+<input type='submit' value='Wyszukaj' />
+</form>
+
+
+<ul>
+<div>
+{% if messages %}
+	<div class="messanges">
+	{% for k in messages %}
+	<li> {{k}}</li>
+	{% endfor %}
+	</div>
+{% endif %}
+</div>
+
+<div>
+	{% if sr %}
+		{% for x in sr %}
+		<li> 
+		<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
+		</li>
+		{% empty %}
+		<li> nie ma nic jeszcze XD. jestem tu
+		</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+</div>
