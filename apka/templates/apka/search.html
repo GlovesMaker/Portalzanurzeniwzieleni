@@ -59,7 +59,7 @@ width: 70%;
 	{% if sr %}
 		{% for x in sr %}
 		<ol> 
-		<a href="{% url 'apka:topics' x.id %}">{{ x }}</a>
+		<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
 		</ol>
 
 		{% endfor %}
