@@ -100,6 +100,6 @@ def search(request):
 		
 
 	
-	return render(request, 'apka/search.html', 'form': form)	
+	return render(request, 'apka/search.html', {'form': form})	
 	
 	
