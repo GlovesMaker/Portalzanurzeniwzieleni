@@ -13,8 +13,8 @@
 	{
 	text-align:justify;	
 	
-	padding: 0 3% 2% 3%;
-	border: 1px solid black;
+	margin:10px;
+	
 	}	
 </style>
 
@@ -22,7 +22,7 @@
 
 
 {% block content %}	
-<div class='box-1'>
+<div class='a'>
 	<div class="laptop">
 
 		<div id="container_topics">
@@ -32,7 +32,7 @@
 
 					<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
 				<div id="article_topics">
-					<span style="text-align:l; font-size:15px;">{{ y.text }}</span>
+					<span style=" font-size:15px;">{{ y.text }}</span>
 				</div>
 			{% empty %}
 
@@ -51,11 +51,11 @@
 		<div id="container_topics">
 			{% for y in entries %}
 
-				<img src="{{ y.foto }}" width=70% " height="30% " </img>	
+					<img src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>	
 
 					<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
 				<div id="article_topics">
-					<span style="text-align:l; font-size:15px;">{{ y.text }}</span>
+					<span style="font-size:15px;">{{ y.text }}</span>
 				</div>
 			{% empty %}
 

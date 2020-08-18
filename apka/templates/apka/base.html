@@ -33,8 +33,8 @@
 	
 	font-size: 40px;
 	border: 1px solid red;
+	margin:10px;
 	
-	margin-left:5px;
 	
 	
 	}
@@ -46,7 +46,8 @@
 	
 	font-size: 20px;
 	border-bottom: 1px solid black;
-	margin-left:5px;
+	
+	margin:10px;
 	}
 
 
@@ -109,6 +110,30 @@ a:hover
 
 
 
+/* START Tematy spotkań */	
+
+.container_db
+	
+	{
+	
+	
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	display: flex;
+	flex-direction: row;
+	}
+
+.container_db div
+
+	{
+	border: 2px solid pink;
+	
+	}
+
+
+/* START Tematy spotkań */	
 
 
 
@@ -126,20 +151,26 @@ a:hover
 .laptop {  display: none; }
 .telefon { display: block; }	
 
+
+
+	.container_db
+	
+		{
+		
+		flex-direction: column;
+		}
+	  
+	.container_db div
+	
+		{
+		margin: 10px;
+		border: 1px solid red;
+		
+		
+		}
+	
 }
 
-.box-1{
-
-flex: 5;
-border: 1px solid blue;
-}	
-
-
-.box-2{
-
-flex: 1;
-border: 1px solid red;
-}
 
 
 	
@@ -154,6 +185,12 @@ border: 1px solid red;
 	display: flex;
 
 	}	
+
+
+
+
+	
+	
 	
 .art_formularz
 
@@ -162,12 +199,29 @@ flex: 1.2;
 border: 1px solid red;
 	}	
 	
+	
+	
+	
 .art_formularz_1
 
 	{
 flex: 0.7;
 border: 1px solid purple;
 	}	
+
+
+
+
+.a {
+flex: 5;
+margin: 10px;
+}
+
+.b {
+flex: 2;
+margin: 10px;
+}
+
 	
 </style>
 
@@ -191,27 +245,46 @@ border: 1px solid purple;
 	<a href="{% url 'apka:search' %}"> Wyszukiwarka</a> |
 	<!--<a href="https://zanurzeniwzieleni.herokuapp.com/admin/"> Admin </a>-->
 
-</div> 	
+</div> 
+
+<br>
 <div class="container_db" >
 	{% block content %}
-	<div class='box-1'>
-	<span> O czym jest portal?</span>
-	<br><br><br><br><br>
-	kim jesteśmy?
-	<br><br><br><br><br>
-	Media o nas!
-	<br><br><br><br><br>
-	Newsletter
-	<br><br><br><br><br>
-	</div>
-
 	
+	<div class='a'>
+	<span class="h1_db"> O czym jest portal?</span>
+
+	<br><br><br><br><br>
+	<span class="h1_db">Media o nas!</span>
+	<br><br><br><br><br>
+	<span class="h1_db">Poznaj nas!</span>
+	<br><br><br>
+	</div>
+	
+	
+		<div class='b'>
+			<center>
+				<span class="h1_db">o nas</span><br><br>
+
+				...
+				<br><br><br>
+				<span class="h1_db">Media</span><br><br>
+				<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img  style='' alt='Follow by Email' title='Follow by Email' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_email.png' width='40' height='40'/></a>
+				<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img style='' alt='Facebook' title='Facebook' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_facebook.png' width='40' height='40'/></a>
+				<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img style=''; text-align:right;'  alt='Instagram' title='Instagram' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_instagram.png' width='40' height='40'/></a>
+			
+			</center>
+		</div>
 	
 
 
 			
 </div>	
+
+
+
 <center>
+
 	<div class="h1_db">Newsletter</div>
 	
 		{% if messages %}
@@ -222,16 +295,18 @@ border: 1px solid purple;
 					</div>
 				{% endif %}
 	</center>
-<div class="container_db_1" >
+	
+	
+<div class="container_db" >
 
 						
 				
-		<div class="art_formularz">
+		<div class="b">
 		<center>
-		<img src="https://www.ideoforce.pl/gfx/ideo-2015/userfiles/_public/blog/newsletter.png" width='60%' >
+		<img style="margin-top:20px; "src="https://www.ideoforce.pl/gfx/ideo-2015/userfiles/_public/blog/newsletter.png" width='100%' >
 		</center>
 		</div>		
-		<div class="art_formularz_1">
+		<div class="a">
 											
 											
 															
@@ -263,21 +338,7 @@ border: 1px solid purple;
 		
 </div>
 {% endblock content%}	
-	<div class='box-2'>
-		<center>
-		<div class="h1_db">o nas</div><br><br>
 
-		...
-		<br><br><br>
-		<div class="h1_db">Media społecznościowe </div><br>
-		<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img  style='' alt='Follow by Email' title='Follow by Email' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_email.png' width='40' height='40'/></a>
-		<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img style='' alt='Facebook' title='Facebook' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_facebook.png' width='40' height='40'/></a>
-		<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img style=''; text-align:right;'  alt='Instagram' title='Instagram' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_instagram.png' width='40' height='40'/></a>
-		<br><br><br>
-		
-		</center>
-	</div>
-	
 <!--	
 
 <div style='width:40px; height:40px;margin-left:5px;margin-bottom:5px; ' class='sfsi_wicons shuffeldiv '>
