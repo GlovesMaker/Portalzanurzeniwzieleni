@@ -141,13 +141,34 @@ flex: 1;
 border: 1px solid red;
 }
 
-.art_formularz_2
+
+	
+.container_db_1
 
 	{
-	padding: 10px;
-	width: 360px;
+	width: 90%;
+	
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid green;
+	display: flex;
 
 	}	
+	
+.art_formularz
+
+	{
+flex: 1.2;
+border: 1px solid red;
+	}	
+	
+.art_formularz_1
+
+	{
+flex: 0.7;
+border: 1px solid purple;
+	}	
+	
 </style>
 
 
@@ -204,9 +225,10 @@ border: 1px solid red;
 
 			
 </div>	
+	<div class="h1_db">Newsletter</div>
+<div class="container_db_1" >
 
-	<div class="h1_db">Newsletter</div><br>
-						<center>
+						
 				{% if messages %}
 					<div >
 					{% for message in messages %}
@@ -214,9 +236,13 @@ border: 1px solid red;
 					{% endfor %}
 					</div>
 				{% endif %}
-			</center>		
-		<div class="art_formularz_2">
-												<div >
+		<div class="art_formularz">
+		<center>
+		<img src="https://www.ideoforce.pl/gfx/ideo-2015/userfiles/_public/blog/newsletter.png" width='60%' >
+		</center>
+		</div>		
+		<div class="art_formularz_1">
+											
 											
 															
 																<form style="text-align:justify;" action="." method="post">
@@ -226,7 +252,7 @@ border: 1px solid red;
 																	
 																	{% csrf_token %}  
 															
-																	<br>
+																
 																	
 																					 
 																	<p><b> Żadnego spamu, masz nasze słowo.</b></p>
@@ -238,14 +264,14 @@ border: 1px solid red;
 																			Zarejestruj się</button>
 																</form>
 																
-													</div>	
+													
 									</div>
 
 		
 		
 		
 		
-
+</div>
 
 
 <!--	
