@@ -62,7 +62,8 @@ def home(request):
 def topics(request):
 
         topics = Topic.objects.order_by('date_added')
-        context = {'topics': topics}
+		form = NewsletterCreateForm()
+        context = {'topics': topics, 'form': form}
 		
 	
 
@@ -77,13 +78,13 @@ def topic(request, topic_id):
     width=topic.entry_set.order_by('-date_added')
     height=topic.entry_set.order_by('-date_added')
     foto=topic.entry_set.order_by('-date_added')
-
+	form = NewsletterCreateForm()
 	
-    x={'topic':topic,'entries':entries,'width':width,'height':height,'foto':foto}
+    x={'topic':topic,'entries':entries,'width':width,'height':height,'foto':foto, 'form': form}
     return render(request, 'apka/topic.html', x)		
 
 def search(request):
-
+	form = NewsletterCreateForm()
 
 	if request.method=='POST':
 		srch = request.POST['srh']
@@ -99,6 +100,6 @@ def search(request):
 		
 
 	
-	return render(request, 'apka/search.html')	
+	return render(request, 'apka/search.html', 'form': form)	
 	
 	
