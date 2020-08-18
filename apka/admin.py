@@ -14,8 +14,10 @@ sys.setdefaultencoding('utf8')
 
 from django.contrib import admin
 
-from apka.models import Topic, Entry
+from apka.models import Topic, Entry, Newsletter
 
 admin.site.register(Topic)
 admin.site.register(Entry)
+admin.site.register(Newsletter)
+
 # Register your models here.

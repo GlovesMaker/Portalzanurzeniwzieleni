@@ -14,7 +14,7 @@ width: 70%;
   background-color: #f4511e;
   border: 1px solid black;
   color: black;
-  padding: 16px 32px;
+
   text-align: center;
   font-size: 16px;
   margin: 4px 2px;
@@ -31,40 +31,41 @@ width: 70%;
 {% extends "apka/base.html" %}	
 
 {% block content %}	
-<div class="h1_db">Wyszukiwarka</div>
-<center>
-<form method='post' action="/search/">
+<div class='box-1'>
+	<div class="h1_db">Wyszukiwarka</div>
+	<center>
+	<form method='post' action="/search/">
 
-{% csrf_token %}
-<input style="height: 5%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
-<br>
+	{% csrf_token %}
+	<input style="height: 40px;" type='text' name="srh"  placeholder='Wyszukaj...'/>
+	<br>
 
 
-<input id="button_search" type='submit' value='Wyszukaj' />
-</form>
-</center>
+	<input style="height: 40px;" id="button_search" type='submit' value='Wyszukaj' />
+	</form>
+	</center>
 
-<div class="h1_db"> Wynik wyszukiwania:</div>
-<div>
-{% if messages %}
-	<div class="messanges">
-	{% for k in messages %}
-	<ol>{{k}}</ol>
-	{% endfor %}
-	</div>
-{% endif %}
-</div>
-
-<div>
-	{% if sr %}
-		{% for x in sr %}
-		<ol> 
-		<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
-		</ol>
-
+	<div class="h1_db"> Wynik wyszukiwania:</div>
+	<div>
+	{% if messages %}
+		<div class="messanges">
+		{% for k in messages %}
+		<ol>{{k}}</ol>
 		{% endfor %}
-		
+		</div>
 	{% endif %}
-</div>
+	</div>
 
+	<div>
+		{% if sr %}
+			{% for x in sr %}
+			<ol> 
+			<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
+			</ol>
+
+			{% endfor %}
+			
+		{% endif %}
+	</div>
+</div>
 {% endblock content %}

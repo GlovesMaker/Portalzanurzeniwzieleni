@@ -2,18 +2,19 @@
 
 
 
-{% block content %}	
-<div class="h1_db">Artykuły</div>
+{% block content %}
+<div class='box-1'>	
+	<div class="h1_db">Artykuły</div>
 
 
 
-	{% for x in topics %}
-		<ol> 
-		<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
-		</ol>
-	{% empty %}
-		<ol> nie ma nic jeszcze XD. </ol>
-	{% endfor %}
-
+		{% for x in topics %}
+			<ol> 
+			<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
+			</ol>
+		{% empty %}
+			<ol> nie ma nic jeszcze XD. </ol>
+		{% endfor %}
+</div>
 
 {% endblock content%}	

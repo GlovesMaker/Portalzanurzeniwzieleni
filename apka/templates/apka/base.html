@@ -13,24 +13,6 @@
 
 <style>
 
-.head_db
-
-	{
-
-	
-	font-size: 40px;
-	border: 1px solid red;
-	margin: 4px 2px;
-	}
-	
-.menu_db
-
-	{
-	
-	font-size: 20px;
-	border-bottom: 1px solid black;
-	margin: 4px 2px;
-	}
 
 .container_db
 
@@ -40,9 +22,34 @@
 	margin-left: auto;
 	margin-right: auto;
 	border: 1px solid green;
-	
+	display: flex;
 
 	}
+
+.head_db
+
+	{
+
+	
+	font-size: 40px;
+	border: 1px solid red;
+	
+	margin-left:5px;
+	
+	
+	}
+	
+	
+.menu_db
+
+	{
+	
+	font-size: 20px;
+	border-bottom: 1px solid black;
+	margin-left:5px;
+	}
+
+
 	
 
 .h1_db
@@ -52,6 +59,7 @@
 font-size: 20px;
 font-weight: bold;
 padding: 20px;
+letter-spacing: 3px;
 }
 
 
@@ -120,18 +128,43 @@ a:hover
 
 }
 
+.box-1{
+
+flex: 5;
+border: 1px solid blue;
+}	
 
 
+.box-2{
+
+flex: 1;
+border: 1px solid red;
+}
+
+.art_formularz_2
+
+	{
+	padding: 10px;
+	width: 360px;
+	flex: 2;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	}	
 </style>
 
 
 
 
-<div class="container_db" >
 
-<div class="head_db" ><a href="{% url 'apka:home' %}">Zanurzeni w zieleni</a></div>
+	<div class="head_db" ><a href="{% url 'apka:home' %}">Zanurzeni w zieleni</a>
+	
 
+	
 
+			
+	</div>
 <div class="menu_db">
 
 
@@ -142,11 +175,9 @@ a:hover
 	<!--<a href="https://zanurzeniwzieleni.herokuapp.com/admin/"> Admin </a>-->
 
 </div> 	
-	
-	
-
+<div class="container_db" >
 	{% block content %}
-	
+	<div class='box-1'>
 	<span> O czym jest portal?</span>
 	<br><br><br><br><br>
 	kim jesteśmy?
@@ -155,6 +186,80 @@ a:hover
 	<br><br><br><br><br>
 	Newsletter
 	<br><br><br><br><br>
+	</div>
 	{% endblock content%}	
+	
+	
+	<div class='box-2'>
+		<center>
+		<div class="h1_db">o nas</div><br><br>
 
+		...
+		<br><br><br>
+		<div class="h1_db">Media społecznościowe </div><br>
+		<a target='_blank' href='/                        '><img  style='' alt='Follow by Email' title='Follow by Email' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_email.png' width='40' height='40'/></a>
+		<a target='_blank' href='https://www.facebook.com/' ><img style='' alt='Facebook' title='Facebook' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_facebook.png' width='40' height='40'/></a>
+		<a target='_blank' href='https://www.instagram.com/' ><img style=''; text-align:right;'  alt='Instagram' title='Instagram' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_instagram.png' width='40' height='40'/></a>
+		<br><br><br>
+		<div class="h1_db">Newsletter</div><br>
+						<center>
+				{% if messages %}
+					<div >
+					{% for message in messages %}
+					<p {% if message.tags == "success"  %} class="alert alert-success" {% else %} class="alert alert-danger"{% endif %}>{{ message }}</p>
+					{% endfor %}
+					</div>
+				{% endif %}
+			</center>
+		<div class="art_formularz_2">
+												<div >
+											
+															
+																<form style="text-align:justify;" action="." method="post">
+																
+																	
+																	{{ form.as_p }}
+																	
+																	{% csrf_token %}  
+															
+																	<br>
+																	
+																					 
+																	<p><b> Żadnego spamu, masz nasze słowo.</b></p>
+																			<!-- reCAPTCHA -->
+																			<!--<script src='https://www.google.com/recaptcha/api.js'></script>
+																			<div class="g-recaptcha" data-sitekey="6LdU_ccUAAAAANRsb558Z3puRs20lSRLijrGneiF"></div><br>-->
+																			
+																			<button  type="submit" onclick="confirm('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem. Jeżli to zrobileś to super! ;)')?location.href='/':''">
+																			Zarejestruj się</button>
+																</form>
+																
+													</div>	
+									</div>
+
+		
+		
+		
+		
+		</center>
+	</div>
 </div>
+
+
+<!--	
+
+<div style='width:40px; height:40px;margin-left:5px;margin-bottom:5px; ' class='sfsi_wicons shuffeldiv '>
+	<div class='inerCnt'>
+		<a class=' sficn' data-effect='' target='_blank' href='/' id='sfsiid_linkedin' style='opacity:1'>
+		<img data-pin-nopin='true' alt='LinkedIn' title='LinkedIn' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_linkedin.png' width='40' height='40' style='' class='sfcm sfsi_wicon ' data-effect='' /></a>
+	</div>
+</div>
+<div style='width:40px; height:40px;margin-left:5px;margin-bottom:5px; ' class='sfsi_wicons shuffeldiv '>
+	<div class='inerCnt'>
+		<a class=' sficn' data-effect='' target='_blank' href='https://www.youtube.com/channel/UCZfTx72GKfJ6fwOeqODUBDg' id='sfsiid_youtube' style='opacity:1'>
+		<img data-pin-nopin='true' alt='YouTube' title='YouTube' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_youtube.png' width='40' height='40' style='' class='sfcm sfsi_wicon ' data-effect='' /></a>
+	</div>
+</div>-->
+
+
+

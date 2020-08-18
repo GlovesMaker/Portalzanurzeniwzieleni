@@ -7,11 +7,56 @@ from .models import Topic
 from .models import Entry
 from django.contrib import messages
 
+import urllib
+import urllib2
+import json
+
+
+from django.shortcuts import render, redirect
+from django.conf import settings
+from django.contrib import messages
+
+from .forms import NewsletterCreateForm
 
 def home(request):
 
+        form = NewsletterCreateForm()
+        
+        if request.method == 'POST':
+                form = NewsletterCreateForm(request.POST)   
+                if form.is_valid():
+                        form.save()
+                        messages.success(request, 'Zostałeś zapisany do newsletter!')
+					
+                """
+                    recaptcha_response = request.POST.get('g-recaptcha-response')
+                    url = 'https://www.google.com/recaptcha/api/siteverify'
+                    values = {
+                        'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                        'response': recaptcha_response
+                    }
+                    data = urllib.urlencode(values)
+                    req = urllib2.Request(url, data)
+                    response = urllib2.urlopen(req)
+                    result = json.load(response)
+                    ''' End reCAPTCHA validation '''
+
+                if result['success']:
+                        form.save()
+                        messages.success(request, 'Zostałeś zapisany do newsletter!')
+                        #return HttpResponse("ok");
+                else:
+                        
+                        messages.error(request, 'Nie zostałeś zapisany! Zaznacz pole "Nie jestem robotem"!')
+                        #return HttpResponse("Invalid reCAPTCHA. Please try again.");"""
+                   
+       
+        #context = {'form': form }
+        #name = {'name': name}
+        
+        
+	return render(request, 'apka/base.html', {'form': form})
 	
-	return render(request, 'apka/base.html')
 		
 
 def topics(request):
@@ -44,8 +89,9 @@ def search(request):
 		srch = request.POST['srh']
 		if srch:
 		
-			match = Topic.objects.filter(Q(text__icontains=srch))
-			#match_1 = Entry.objects.filter(Q(text__icontains=srch))
+			match = Topic.objects.filter(Q(text__icontains=srch)) 
+			#match_1 = Entry.objects.filter(Q(text__icontains=srch)|
+										   #Q(text__icontains=srch))
 			if match:
 				return render(request, 'apka/search.html', {'sr':match})	
 			else:

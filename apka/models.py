@@ -35,3 +35,15 @@ class Entry(models.Model):
         return self.text[:50]+'...'
 
 
+class Newsletter(models.Model):
+    first_name 		= models.CharField(max_length=50, verbose_name='Twoje imię')
+    email 		= models.EmailField(blank=False, verbose_name='Twój e-mail')
+    regulamin_1 	= models.BooleanField(default=False, verbose_name='Chcę zapisać się do newslettera, a co za tym idzie wyrażam zgodę na otrzymanie na mój adres e-mail informacji o działalności Zanurzeni w zieleni.')
+    date_added          = models.DateTimeField(auto_now_add=True)
+
+   
+    class Meta:
+        ordering = ('-date_added',)
+
+    def __str__(self):
+        return self.email
