@@ -78,7 +78,7 @@ def topic(request, topic_id):
     width=topic.entry_set.order_by('-date_added')
     height=topic.entry_set.order_by('-date_added')
     foto=topic.entry_set.order_by('-date_added')
-	form = NewsletterCreateForm()
+	
 	
     x={'topic':topic,'entries':entries,'width':width,'height':height,'foto':foto, 'form': form}
     return render(request, 'apka/topic.html', x)		
