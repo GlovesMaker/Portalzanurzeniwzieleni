@@ -204,38 +204,28 @@ border: 1px solid purple;
 	Newsletter
 	<br><br><br><br><br>
 	</div>
-	{% endblock content%}	
-	
-	
-	<div class='box-2'>
-		<center>
-		<div class="h1_db">o nas</div><br><br>
 
-		...
-		<br><br><br>
-		<div class="h1_db">Media społecznościowe </div><br>
-		<a target='_blank' href='/                        '><img  style='' alt='Follow by Email' title='Follow by Email' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_email.png' width='40' height='40'/></a>
-		<a target='_blank' href='https://www.facebook.com/' ><img style='' alt='Facebook' title='Facebook' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_facebook.png' width='40' height='40'/></a>
-		<a target='_blank' href='https://www.instagram.com/' ><img style=''; text-align:right;'  alt='Instagram' title='Instagram' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_instagram.png' width='40' height='40'/></a>
-		<br><br><br>
-		
-		</center>
-	</div>
 	
+	
+
 
 			
 </div>	
+<center>
 	<div class="h1_db">Newsletter</div>
-<div class="container_db_1" >
-
-						
-				{% if messages %}
+	
+		{% if messages %}
 					<div >
 					{% for message in messages %}
 					<p {% if message.tags == "success"  %} class="alert alert-success" {% else %} class="alert alert-danger"{% endif %}>{{ message }}</p>
 					{% endfor %}
 					</div>
 				{% endif %}
+	</center>
+<div class="container_db_1" >
+
+						
+				
 		<div class="art_formularz">
 		<center>
 		<img src="https://www.ideoforce.pl/gfx/ideo-2015/userfiles/_public/blog/newsletter.png" width='60%' >
@@ -272,8 +262,22 @@ border: 1px solid purple;
 		
 		
 </div>
+{% endblock content%}	
+	<div class='box-2'>
+		<center>
+		<div class="h1_db">o nas</div><br><br>
 
-
+		...
+		<br><br><br>
+		<div class="h1_db">Media społecznościowe </div><br>
+		<a target='_blank' href='/                        '><img  style='' alt='Follow by Email' title='Follow by Email' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_email.png' width='40' height='40'/></a>
+		<a target='_blank' href='https://www.facebook.com/' ><img style='' alt='Facebook' title='Facebook' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_facebook.png' width='40' height='40'/></a>
+		<a target='_blank' href='https://www.instagram.com/' ><img style=''; text-align:right;'  alt='Instagram' title='Instagram' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_instagram.png' width='40' height='40'/></a>
+		<br><br><br>
+		
+		</center>
+	</div>
+	
 <!--	
 
 <div style='width:40px; height:40px;margin-left:5px;margin-bottom:5px; ' class='sfsi_wicons shuffeldiv '>

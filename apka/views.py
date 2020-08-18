@@ -80,7 +80,7 @@ def topic(request, topic_id):
     foto=topic.entry_set.order_by('-date_added')
 	
 	
-    x={'topic':topic,'entries':entries,'width':width,'height':height,'foto':foto, 'form': form}
+    x={'topic':topic,'entries':entries,'width':width,'height':height,'foto':foto}
     return render(request, 'apka/topic.html', x)		
 
 def search(request):
