@@ -1,75 +1,9 @@
 
-<style>
-input
-{
-border: 1px solid black;
-margin-bottom:5px;
-
-width: 70%;
-
-}
-
-#button_search 
-{
-  
-
-  color: black;
-
-  
-  font-size: 16px;
-  	
-
- 
-}
-
-
-</style>
-
-
 
 {% extends "apka/base.html" %}	
 
 {% block content %}	
-<div class='a'>
-	<span class="h1_db">Wyszukiwarka</span>
-	<br><br>
-	<center>
-	<form method='post' action="/search/">
 
-	{% csrf_token %}
-	<input style="height: 30px;" type='text' name="srh"  placeholder='Wyszukaj...'/>
-	<br>
-
-
-	<input style="height: 20px;" id="button_search" type='submit' value='Wyszukaj' />
-	</form>
-	</center>
-	<!-- gdy nie ma nic podobego w wyszukiwarce -->
-	<span class="h1_db"> Wynik wyszukiwania:</span>
-	
-	{% if messages %}
-		
-		{% for k in messages %}
-		<ol style="margin-left:-20px;">{{k}}</ol>
-		{% endfor %}
-	
-	{% endif %}
-	
-	
-	<!-- Wyszukiwarka -->
-
-	
-		{% if sr %}
-			{% for x in sr %}
-			<ol style="margin-left:-20px;"> 
-			<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
-			</ol>
-
-			{% endfor %}
-			
-		{% endif %}
-	
-</div>
 	<div class='b'>
 			<center>
 				<span class="h1_db">o nas</span><br><br>
