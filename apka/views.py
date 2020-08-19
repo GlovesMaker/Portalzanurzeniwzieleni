@@ -96,7 +96,7 @@ def search(request):
 			if match:
 				return render(request, 'apka/search.html', {'sr':match})	
 			else:
-				messages.error(request, 'Szukaj dalej')
+				messages.error(request, 'Przykro nam, ale nie znaleziono żadnego z Twoich haseł. Spróbuj ponownie używając różnych słów kluczowych.')
 		
 
 	
