@@ -5,7 +5,7 @@ class Topic(models.Model):
 
     
     text = models.CharField(max_length=200, verbose_name='Tytuł artykułu')
-    
+    key_words = models.TextField(verbose_name='Słowa kluczowe', default='Tu możesz dodać słowa kluczowe, a nawet całe artykuły')
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -22,10 +22,10 @@ class Entry(models.Model):
     text = models.TextField(verbose_name='Tekst artykułu')
 	
     date_added = models.DateTimeField(auto_now_add=True)
-    width = models.CharField(max_length=200, verbose_name='Szerokość zdjęcia', default='100%')
-    height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='20%')
+    width = models.CharField(max_length=200, verbose_name='Szerokość zdjęcia', default='400')
+    height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='300')
     foto = models.CharField(max_length=200, verbose_name='Zdjęcie', default='link do zdjęcia')
-	#id_topic = height = models.CharField(max_length=200, verbose_name='Wysokość zdjęcie', default='20%')
+
 
     class Meta:
         verbose_name_plural = 'Artykuły'
