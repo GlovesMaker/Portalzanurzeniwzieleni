@@ -194,7 +194,15 @@ a:hover
 }
 
 
+.container_db_3
+	{
+	
+	
+	width: 90%;
+	border: 1px solid green;
 
+
+	}	
 
 .container_db_1
 
@@ -318,12 +326,12 @@ border: 1px solid purple;
 
 </div>
 	<!-- gdy nie ma nic podobego w wyszukiwarce -->
+<div style="text-align:justify;" class="container_db_3" >	
 	
-<center>	
 	{% if messages %}
 		
 		{% for k in messages %}
-		<ol >{{k}}</ol>
+		<ol style="magrin-left:-20px" >{{k}}</ol>
 		{% endfor %}
 	
 	{% endif %}
@@ -334,7 +342,7 @@ border: 1px solid purple;
 	
 		{% if sr %}
 			{% for x in sr %}
-			<ol style="margin-left:-20px;"> 
+			<ol style="magrin-right:-220px"> 
 			<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
 			</ol>
 
@@ -342,13 +350,14 @@ border: 1px solid purple;
 			
 		{% endif %}
 	
-</center>	
+	
+</div>
 
 <br>
 <div class="container_db" >
 	{% block content %}
 	
-	<div class='a'>
+	<div style="text-align:justify;" class='a'>
 	<span class="h1_db"> O czym jest portal?</span>
 
 	<br><br><br><br><br>
