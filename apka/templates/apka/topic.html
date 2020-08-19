@@ -1,22 +1,3 @@
-<style>
-
-#container_topics
-
-	{
-	text-align:center;	
-	font-size: 20px;
-	/* border: 1px solid blue; */
-	}	
-
-#article_topics
-
-	{
-	text-align:justify;	
-	
-	margin:10px;
-	
-	}	
-</style>
 
 {% extends "apka/base.html" %}	
 
@@ -25,13 +6,13 @@
 <div class='a'>
 	<div class="laptop">
 
-		<div id="container_topics">
+		<div style="text-align:center; font-size: 20px;">
 			{% for y in entries %}
 
 				<img src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>	
 
 					<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
-				<div id="article_topics">
+				<div style="text-align:justify;	margin:10px;">
 					<span style=" font-size:15px;">{{ y.text }}</span>
 				</div>
 			{% empty %}
@@ -48,13 +29,13 @@
 
 	<div class="telefon">
 
-		<div id="container_topics">
+		<div style="text-align:center; font-size: 20px;">
 			{% for y in entries %}
 
 					<img src="{{ y.foto }}" width="80%" height="" </img>	
 
 					<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
-				<div id="article_topics">
+					<div style="text-align:justify;	margin:10px;">
 					<span style="font-size:15px;">{{ y.text }}</span>
 				</div>
 			{% empty %}
