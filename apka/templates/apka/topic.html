@@ -9,7 +9,7 @@
 		<div style="text-align:center; font-size: 20px;">
 			{% for y in entries %}
 
-				<img src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>	
+				<img alt='Brak zdjęcia' src="{{ y.foto }}" width="{{ y.width }}" height="{{ y.height }}" </img>	
 
 					<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
 				<div style="text-align:justify;	margin:10px;">
@@ -32,7 +32,7 @@
 		<div style="text-align:center; font-size: 20px;">
 			{% for y in entries %}
 
-					<img src="{{ y.foto }}" width="80%" height="" </img>	
+					<img alt='Brak zdjęcia' src="{{ y.foto }}" width="80%" height="" </img>	
 
 					<p>{{ y.date_added|date:'M d,Y H:i' }}</p>
 					<div style="text-align:justify;	margin:10px;">

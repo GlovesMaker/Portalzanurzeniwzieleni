@@ -102,4 +102,16 @@ def search(request):
 	
 	return render(request, 'apka/search.html')	
 	
+
+def contact(request):
+        
+        return render(request,'apka/contact.html')
 	
+
+def cooperation(request):
+
+         return render(request,'apka/cooperation.html')
+
+def worth_recommending(request):
+
+        return render(request,'apka/worth_recommending.html')       

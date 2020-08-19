@@ -21,7 +21,7 @@
 	
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid green;
+	border: 1px solid blue;
 	display: flex;
 
 	}
@@ -32,24 +32,15 @@
 
 	
 	font-size: 40px;
-	border: 1px solid red;
+	border: 1px solid white;
 	margin:10px;
+	color: green;
 	
 	
 	
 	}
 	
 	
-.menu_db
-
-	{
-	
-	font-size: 2px;
-	border-bottom: 1px solid black;
-	
-	margin:10px;
-	}
-
 
 	
 
@@ -79,14 +70,14 @@ a:link
 
 a:visited
 {
-	color: black;
+	color:black;
 	text-decoration: none;
 
 } 
 /* ponajechaniu link  */
 a:hover
 {
-	color: green;
+	color: black;
 	text-decoration: none;
 }  
 
@@ -144,7 +135,7 @@ a:hover
 	border-bottom: 1px solid black;
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid green;
+	background-color: black;
 	display: flex;
 	margin:10px;
 		width: 90%;
@@ -199,7 +190,7 @@ a:hover
 	
 	
 	width: 90%;
-	border: 1px solid green;
+	border: 1px solid white;
 
 
 	}	
@@ -256,23 +247,23 @@ margin: 10px;
 .a_1 {
 flex: 2;
 margin: 10px;
-border: 1px solid purple;
+border: 1px solid black;
 font-size: 16px;
-padding-top:5px;
+padding-top:15px;
 }
 
 .b_1 {
 flex: 1;
 margin: 10px;
-border: 1px solid purple;
+border: 1px solid black;
 
-padding-top:5px;
+padding-top:8px;
 }
 
 .c_1 {
 flex: 1;
 margin: 10px;
-border: 1px solid purple;
+border: 1px solid black;
 
 }	
 	
@@ -284,26 +275,26 @@ border: 1px solid purple;
 <center>
 
 
-	<div class="head_db" ><a href="{% url 'apka:home' %}">Zanurzeni w zieleni</a>
-	
+	<span class="head_db" >Zanurzeni w zieleni</span>
+	<a href="{% url 'apka:home' %}"></a>
 	
 	</div>
-<div class="menu_db">
+<div class="menu_db" >
 
-	<div class='a_1'>
-	<a href="https://zanurzeniwzieleni.herokuapp.com/topics/1/"> Pielęgnacja </a> |
-	<a href="https://zanurzeniwzieleni.herokuapp.com/topics/2/"> Inspiracje  </a> |
-	<a href="https://zanurzeniwzieleni.herokuapp.com/topics/3/"> Zakładka_3  </a> |
-	<a href="https://zanurzeniwzieleni.herokuapp.com/topics/5/"> Zakładka_4  </a> |
-
-	<a href="{% url 'apka:topics' %}"> Artykuły </a> |
+	<div class='a_1' >
+	<a style="color:white;" href="/"> Strona główna </a> <span style="color:white">|</span>
+	<a style="color:white;"  href="{% url 'apka:topics' %}"> Artykuły <span style="color:white">|</span>
+	<a  style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia  <span style="color:white">|</span>
+	<a  style="color:white;" href="{% url 'apka:cooperation' %}"> Współpraca  <span style="color:white">|</span>
+	<a style="color:white;"  href="{% url 'apka:contact' %}"> kontant 
 	
-	<!--<a href="https://zanurzeniwzieleni.herokuapp.com/admin/"> Admin </a>-->
+	
+
 	</div>
 	<div class='b_1'>
-			<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img  style='' alt='Follow by Email' title='Follow by Email' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_email.png' width='20' height='20'/></a>
-				<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img style='' alt='Facebook' title='Facebook' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_facebook.png' width='20' height='20'/></a>
-				<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img style=''; text-align:right;'  alt='Instagram' title='Instagram' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_instagram.png' width='20' height='20'/></a>
+				<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
+				<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
+				<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
 			
 	</div>
 	<div class='c_1'>
@@ -312,7 +303,7 @@ border: 1px solid purple;
 
 		{% csrf_token %}
 		
-		<input style="height: 15px; width: 90%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
+		<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
 
 
 		<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
@@ -331,7 +322,7 @@ border: 1px solid purple;
 	{% if messages %}
 		
 		{% for k in messages %}
-		<ol style="magrin-left:-20px" >{{k}}</ol>
+		<ol>{{k}}</ol>
 		{% endfor %}
 	
 	{% endif %}
@@ -342,7 +333,7 @@ border: 1px solid purple;
 	
 		{% if sr %}
 			{% for x in sr %}
-			<ol style="magrin-right:-220px"> 
+			<ol> 
 			<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
 			</ol>
 
@@ -354,7 +345,10 @@ border: 1px solid purple;
 </div>
 
 <br>
+
 <div class="container_db" >
+
+
 	{% block content %}
 	
 	<div style="text-align:justify;" class='a'>
