@@ -138,7 +138,7 @@ a:hover
 	background-color: black;
 	display: flex;
 	margin:10px;
-		width: 90%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	
@@ -232,7 +232,6 @@ border: 1px solid purple;
 
 
 
-
 .a {
 flex: 5;
 margin: 10px;
@@ -243,28 +242,33 @@ flex: 2;
 margin: 10px;
 }
 
+.a_0 {
+flex: 1;
+
+}
 	
 .a_1 {
-flex: 2;
-margin: 10px;
+flex: 4;
+margin: 5px;
 border: 1px solid black;
-font-size: 16px;
-padding-top:15px;
+font-size: 17px;
+
+padding: 50px 50px 50px 50px;
 }
 
 .b_1 {
 flex: 1;
-margin: 10px;
-border: 1px solid black;
 
-padding-top:8px;
+border: 1px solid black;
+margin: 5px;
+padding-top:50px;
 }
 
 .c_1 {
-flex: 1;
-margin: 10px;
+flex: 2;
+margin: 5px;
 border: 1px solid black;
-
+padding-top:40px;
 }	
 	
 	
@@ -291,26 +295,55 @@ border: 1px solid black;
 
 }	
 	
+.button_db {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 100%;
+}
+.button_db {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
 
-	
+.button_db:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
 </style>
 
 
 <center>
 
 
-	<span class="head_db" >Zanurzeni w zieleni</span>
-	<a href="{% url 'apka:home' %}"></a>
+	<!--<span class="head_db" >Zanurzeni w zieleni</span>-->
+	
 	
 	</div>
 <div class="menu_db" >
 
+
+<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
+
 	<div class='a_1' >
-	<a style="color:white;" href="/"> Strona główna </a> <span style="color:white">|</span>
-	<a style="color:white;"  href="{% url 'apka:topics' %}"> Artykuły <span style="color:white">|</span>
-	<a  style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia  <span style="color:white">|</span>
-	<a  style="color:white;" href="{% url 'apka:cooperation' %}"> Współpraca  <span style="color:white">|</span>
-	<a style="color:white;"  href="{% url 'apka:contact' %}"> kontant 
+	
+	<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> ||</span>
+	<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> ||</span>
+	<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
+	<a style="color:white;" href="{% url 'apka:cooperation' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
+	<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
+	
 	
 	
 
@@ -341,12 +374,12 @@ border: 1px solid black;
 
 </div>
 	<!-- gdy nie ma nic podobego w wyszukiwarce -->
-<div style="text-align:justify;" class="container_db_3" >	
-	
+<div style="text-align:justify; border: 1 solid red;" class="container_db_3" >	
+	<center>
 	{% if messages %}
 		
 		{% for k in messages %}
-		<ol>{{k}}</ol>
+		<div  style="border: 2px solid red; font-size:16px;" ><ol>{{k}}</ol></div>
 		{% endfor %}
 	
 	{% endif %}
@@ -357,24 +390,24 @@ border: 1px solid black;
 	
 		{% if sr %}
 			{% for x in sr %}
-			<ol> 
-			<a href="{% url 'apka:topic' x.id %}">{{ x }}</a>
+			<ol > 
+			<a style="margin-left:-40px; " href="{% url 'apka:topic' x.id %}"><button class="button_db">{{ x }}</button></a>
 			</ol>
 
 			{% endfor %}
 			
 		{% endif %}
-	
+		</center>
 	
 </div>
 
 <br>
 
-<div class="container_db" >
+
 
 
 	{% block content %}
-	
+<div class="container_db" >	
 	<div style="text-align:justify;" class='a'>
 	<span class="h1_db"> O czym jest portal?</span>
 
@@ -404,18 +437,18 @@ border: 1px solid black;
 
 
 
-<center>
+		<center>
 
-	<div class="h1_db">Newsletter</div>
-	
-		{% if messages %}
-					<div >
-					{% for message in messages %}
-					<p {% if message.tags == "success"  %} class="alert alert-success" {% else %} class="alert alert-danger"{% endif %}>{{ message }}</p>
-					{% endfor %}
-					</div>
-				{% endif %}
-	</center>
+			<div class="h1_db">Newsletter</div>
+			
+				{% if messages %}
+							<div >
+							{% for message in messages %}
+							<p {% if message.tags == "success"  %} class="alert alert-success" {% else %} class="alert alert-danger"{% endif %}>{{ message }}</p>
+							{% endfor %}
+							</div>
+						{% endif %}
+		</center>
 	
 	
 <div class="container_db" >
@@ -460,20 +493,7 @@ border: 1px solid black;
 </div>
 {% endblock content%}	
 
-<!--	
 
-<div style='width:40px; height:40px;margin-left:5px;margin-bottom:5px; ' class='sfsi_wicons shuffeldiv '>
-	<div class='inerCnt'>
-		<a class=' sficn' data-effect='' target='_blank' href='/' id='sfsiid_linkedin' style='opacity:1'>
-		<img data-pin-nopin='true' alt='LinkedIn' title='LinkedIn' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_linkedin.png' width='40' height='40' style='' class='sfcm sfsi_wicon ' data-effect='' /></a>
-	</div>
-</div>
-<div style='width:40px; height:40px;margin-left:5px;margin-bottom:5px; ' class='sfsi_wicons shuffeldiv '>
-	<div class='inerCnt'>
-		<a class=' sficn' data-effect='' target='_blank' href='https://www.youtube.com/channel/UCZfTx72GKfJ6fwOeqODUBDg' id='sfsiid_youtube' style='opacity:1'>
-		<img data-pin-nopin='true' alt='YouTube' title='YouTube' src='https://joannaceplin.pl/wp-content/plugins/ultimate-social-media-icons/images/icons_theme/black/black_youtube.png' width='40' height='40' style='' class='sfcm sfsi_wicon ' data-effect='' /></a>
-	</div>
-</div>-->
 
 
 

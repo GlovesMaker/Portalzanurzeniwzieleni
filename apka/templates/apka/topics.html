@@ -3,6 +3,7 @@
 
 
 {% block content %}
+<div class="container_db" >	
 <div style="text-align:justify;" class='a'>	
 	<span style="text-align:justify;" class="h1_db">Artykuły</span>
 
@@ -10,7 +11,7 @@
 
 		{% for x in topics %}
 			<ol>
-			<a style="margin-left:-20px;" href="{% url 'apka:topic' x.id %}">{{ x }} </a>
+			<a style="margin-left:-20px;" href="{% url 'apka:topic' x.id %}"><button class="button_db">{{ x }} </button></a>
 			</ol>
 		{% empty %}
 			<ol> Artykuły są w produkcji </ol>
@@ -29,5 +30,6 @@
 				<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img style=''; text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='40' height='40'/></a>
 			
 			</center>
-		</div>
+</div>
+</div>
 {% endblock content%}	
