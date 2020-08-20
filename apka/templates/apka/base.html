@@ -255,8 +255,8 @@ flex: 1;
 	
 .a_1 {
 flex: 4;
-margin: 5px;
-border: 1px solid black;
+margin: 0px;
+border: 1px solid red;
 font-size: 17px;
 
 padding: 50px 50px 50px 50px;
@@ -265,7 +265,7 @@ padding: 50px 50px 50px 50px;
 .b_1 {
 flex: 1;
 
-border: 1px solid black;
+border: 1px solid red;
 margin: 5px;
 padding-top:50px;
 }
@@ -273,11 +273,32 @@ padding-top:50px;
 .c_1 {
 flex: 2;
 margin: 5px;
-border: 1px solid black;
+border: 1px solid red;
 padding-top:40px;
 }	
 	
-	
+.a_1_t {
+flex: 4;
+margin: 5px;
+border: 1px solid blue;
+font-size: 17px;
+
+}
+
+.b_1_t {
+flex: 1;
+
+border: 1px solid blue;
+margin: 5px;
+
+}
+
+.c_1_t {
+flex: 2;
+margin: 5px;
+border: 1px solid blue;
+
+}		
 .a_2 {
 flex: 1;
 margin: 10px;
@@ -331,50 +352,87 @@ border: 1px solid black;
 
 
 <center>
+
 <div class="telefon">
-
-	<span class="head_db" >Zanurzeni w zieleni</span>
-
-	</div>
-<div class="menu_db" >
-<div class="laptop">
-
-<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
-	</div>
-	<div class='a_1' >
-	
-	<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> ||</span>
-	<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> ||</span>
-	<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
-	<a style="color:white;" href="{% url 'apka:cooperation' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
-	<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
-	
-	
-	
-
-	</div>
-	<div class='b_1'>
-				<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
-				<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
-				<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
+			<div class="menu_db" >
+			<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
 			
-	</div>
-	<div class='c_1'>
+			<div class='a_1_t' >
+			
+			<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> ||</span>
+			<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> ||</span>
+			<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
+			<a style="color:white;" href="{% url 'apka:cooperation' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
+			<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
+			
+			
+			
 
-		<form method='post' action="/search/">
+			</div>
+			<div class='b_1_t'>
+						<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
+						<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
+						<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
+					
+			</div>
+			<div class='c_1_t'>
 
-		{% csrf_token %}
-		
-		<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
+				<form method='post' action="/search/">
+
+				{% csrf_token %}
+				
+				<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
 
 
-		<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
-		
-		
-		</form>
-	</div>
+				<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
+				
+				
+				</form>
+			</div>
 	
+		</div>	
 	
+
+	</div>
+
+<div class="laptop">
+		<div class="menu_db" >
+			<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
+			
+			<div class='a_1' >
+			
+			<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> ||</span>
+			<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> ||</span>
+			<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
+			<a style="color:white;" href="{% url 'apka:cooperation' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
+			<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
+			
+			
+			
+
+			</div>
+			<div class='b_1'>
+						<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
+						<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
+						<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
+					
+			</div>
+			<div class='c_1'>
+
+				<form method='post' action="/search/">
+
+				{% csrf_token %}
+				
+				<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
+
+
+				<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
+				
+				
+				</form>
+			</div>
+	
+		</div>	
 	
 
 </div>
