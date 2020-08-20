@@ -254,24 +254,30 @@ flex: 1;
 }
 	
 .a_1 {
-flex: 4;
+flex: 1;
 margin: 0px;
 border: 1px solid red;
-font-size: 17px;
+font-size: 20px;
+	width: 90%;
+	
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid green;
 
-padding: 50px 50px 50px 50px;
+	padding: 25px 0px 25px 0px;
+	background-color:black;
 }
 
 .b_1 {
-flex: 1;
+flex: 2;
 
-border: 1px solid red;
+border: 1px solid green;
 margin: 5px;
-padding-top:50px;
+padding-top:40px;
 }
 
 .c_1 {
-flex: 2;
+flex: 1;
 margin: 5px;
 border: 1px solid red;
 padding-top:40px;
@@ -348,6 +354,15 @@ border: 1px solid black;
 }
 
 
+
+
+	
+
+ 
+
+ 
+	
+
 </style>
 
 
@@ -355,9 +370,9 @@ border: 1px solid black;
 
 <div class="telefon">
 			<div class="menu_db" >
-			<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
+			<a  href="{% url 'apka:home' %}"><img alt="logo"  style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
 			
-			<div class='a_1_t' >
+			<!--<div class='a_1_t' >
 			
 			<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> ||</span>
 			<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> ||</span>
@@ -366,9 +381,9 @@ border: 1px solid black;
 			<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
 			
 			
-			
+			</div>-->
 
-			</div>
+			
 			<div class='b_1_t'>
 						<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
 						<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
@@ -399,22 +414,11 @@ border: 1px solid black;
 		<div class="menu_db" >
 			<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
 			
-			<div class='a_1' >
-			
-			<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> ||</span>
-			<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> ||</span>
-			<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
-			<a style="color:white;" href="{% url 'apka:cooperation' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
-			<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
-			
-			
-			
 
-			</div>
 			<div class='b_1'>
-						<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
-						<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
-						<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
+						<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='50' height='50'/></a>
+						<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='50' height='50'/></a>
+						<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='50' height='50'/></a>
 					
 			</div>
 			<div class='c_1'>
@@ -436,6 +440,23 @@ border: 1px solid black;
 	
 
 </div>
+
+
+			<div class='a_1' >
+			
+			<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> |</span>
+			<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> |</span>
+			<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> |</span>
+			<a style="color:white;" href="{% url 'apka:cooperation' %}"> Warte polecenia   </a> <span style="color:white"> |</span>
+			<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
+			
+			
+			
+
+			</div>
+
+
+
 	<!-- gdy nie ma nic podobego w wyszukiwarce -->
 <div style="text-align:justify; border: 1 solid red;" class="container_db_3" >	
 	<center>
@@ -525,25 +546,46 @@ border: 1px solid black;
 		</div>		
 		<div class="a">
 											
-											
+																<!--<label  for="id_first_name">Twoje imię:</label> 
+																<label for="id_email">Twój e-mail:</label>-->
 															
-																<form style="text-align:justify;" action="." method="post">
+																<form  style="text-align:justify;" action="." method="post">
+																<table bgcolor="#6495ED">
 																
-																	
-																	{{ form.as_p }}
-																	
-																	{% csrf_token %}  
+																<tr>	 
+																<td><input style="" type="text" name="first_name" required id="id_first_name" maxlength="50" /></td><td>Twoje imię</td>
+																</tr>
+																
+																
+																<tr>
+																 <td><input style="" type="email" name="email" required id="id_email" maxlength="254" /></td><td>Twój e-mail</td>
+																</tr>
+																
+																<tr >
+																<td><input type="checkbox" name="regulamin_1" id="id_regulamin_1" /></td>
+																<td style="width: 0%; height: 1em">Chcę zapisać się do newslettera, a co za tym idzie wyrażam zgodę na otrzymanie na mój adres e-mail informacji o działalności Zanurzeni w zieleni.</td>
+																
+																</tr>	
 															
-																
-																	
-																					 
-																	<p><b> Żadnego spamu, masz nasze słowo.</b></p>
+										
+																<td colspan="2" align="center"><br>
+																<b> Żadnego spamu, masz nasze słowo.</b>
 																			<!-- reCAPTCHA -->
 																			<!--<script src='https://www.google.com/recaptcha/api.js'></script>
 																			<div class="g-recaptcha" data-sitekey="6LdU_ccUAAAAANRsb558Z3puRs20lSRLijrGneiF"></div><br>-->
-																			
+																			<br>
 																			<button  type="submit" onclick="confirm('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem. Jeżli to zrobileś to super! ;)')?location.href='/':''">
 																			Zapisz się </button>
+																</td>
+															
+																</table> 
+															
+																
+																	{% csrf_token %}  
+															
+																
+																					 
+																
 																</form>
 																
 													
