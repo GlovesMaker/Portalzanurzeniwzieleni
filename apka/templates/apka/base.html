@@ -542,7 +542,11 @@ border: 1px solid black;
 </style>
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
-
+ <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
 <center>
 
 <div class="telefon">
@@ -744,7 +748,7 @@ border: 1px solid black;
 												<b> Żadnego spamu, masz nasze słowo.</b><br><br>
 												<!-- reCAPTCHA -->
 																			<script src='https://www.google.com/recaptcha/api.js'></script>
-																			<div class="g-recaptcha" data-sitekey="6Le9qsEZAAAAAGT8_5bPfVtcDelueb51yQuJfUZu"></div><br>
+																			<div class="g-recaptcha" data-sitekey="6LenrcEZAAAAAHsAwZ5nxIXVayiBTN83nWcCznsf"></div><br>
 												<div class="form-row">
 													<button type="submit" class="submit-btn" onclick="confirm('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem. Jeżli to zrobileś to super! ;)')?location.href='/':''">
 														Zapisz się
