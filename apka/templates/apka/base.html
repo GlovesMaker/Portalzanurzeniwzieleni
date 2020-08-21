@@ -654,7 +654,7 @@ function quit(){
 
 		<center>
 
-			<div class="h1_db">Newsletter</div>
+			<div class="h1_db" style="z-index: 20;">Newsletter</div>
 			
 				{% if messages %}
 							<div >
@@ -677,7 +677,7 @@ function quit(){
 		</div>		
 		<div class="a">
 											
-						<div style="text-align:justify">							
+						<div style="text-align:justify; z-index: 20;">							
 									<form class="form" id="contactForm" action="." method="post">
 												<div class="form-row">
 													<label  for="id_first_name">Twoje imię</label>
@@ -688,7 +688,7 @@ function quit(){
 													<input style="" type="email" name="email" required id="id_email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
 												</div>
 										
-												<div style="z-index: -10;"class="form-row">
+												<div style="z-index: 20;"class="form-row">
 													<label class="checkbox-cnt">
 														<input  type="checkbox" name="regulamin_1" id="id_regulamin_1" data-error="Musisz wypełnić pole">
 														<i class="state" aria-hidden="true"></i>
