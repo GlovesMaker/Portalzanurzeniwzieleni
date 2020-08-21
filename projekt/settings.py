@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 ]
 
 
-GOOGLE_RECAPTCHA_SECRET_KEY = '6Le9qsEZAAAAAGT8_5bPfVtcDelueb51yQuJfUZu'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Le9qsEZAAAAAFyGHARWxnlMdqRtgTGrKVKV1sEC'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
