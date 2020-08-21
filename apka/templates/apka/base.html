@@ -537,199 +537,68 @@ border: 1px solid black;
 	
 
  
-body {
-  margin: 0;
-  font-family: 'Droid Serif', serif;
-  background-color: #f4f4f4;
-}
-
-a {
-  color: #000;
-}
-
-
-/* header */
-
-.header {
-  background-color: #fff;
-  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+#burger{
   position: fixed;
-  width: 100%;
-  z-index: 3;
-}
-
-.header ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.header li a {
-  display: block;
-  padding: 20px 20px;
-  border-right: 1px solid #f4f4f4;
-  text-decoration: none;
-}
-
-.header li a:hover,
-.header .menu-btn:hover {
-  background-color: #f4f4f4;
-}
-
-.header .logo {
-  display: block;
-  float: left;
-  font-size: 2em;
-  padding: 10px 20px;
-  text-decoration: none;
-}
-
-/* menu */
-
-.header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-out;
-}
-
-/* menu icon */
-
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 28px 20px;
-  position: relative;
-  user-select: none;
-}
-
-.header .menu-icon .navicon {
-  background: #333;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 18px;
-}
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background: #333;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-
-.header .menu-icon .navicon:before {
-  top: 5px;
-}
-
-.header .menu-icon .navicon:after {
-  top: -5px;
-}
-
-/* menu btn */
-
-.header .menu-btn {
-  display: none;
-}
-
-.header .menu-btn:checked ~ .menu {
-  max-height: 240px;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  right: 0;
   top: 0;
+  color: white;
+  background: linear-gradient(45deg, #9682C8 10%, #05BCC9);;
+  font-size: 32px;
+  padding: 16px 16px 32px 32px;
+  border-radius: 0% 0% 0% 100%;
+  transition: 1s;
+  cursor: pointer;
 }
 
-/* 48em = 768px */
-
-@media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
-  .header li a {
-    padding: 20px 30px;
-  }
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
-  }
-  .header .menu-icon {
-    display: none;
-  }
-}
-
-
-/* section */
-
-.section {
-  overflow: hidden;
-  margin: auto;
-  max-width: 1400px;
-}
-
-.section a {
-  position: relative;
-  float: left;
-  width: 100%;
-}
-
-.section a img {
-  width: 100%;
-  display: block;
-}
-
-.section a span {
-  color: #fff;
-  position: absolute;
-  left: 5%;
-  bottom: 5%;
-  font-size: 2em;
-  text-shadow: 1px 1px 0 #000;
-}
-
-.section-split a span {
+#quit{
+  position: fixed;
+  top: 0;
+  color: white;
+  font-size: 32px;
+  padding: 16px;
   display: none;
-}
-
-.section-split a:hover span {
-  display: block;
-}
-
-
-/* 48em = 768px */
-
-@media (min-width: 48em) {
-  .section-split a {
-    width: 50%;
-  }
+  cursor: pointer;
 }
  
-
 	
+#links{
+  display: none;
+  flex-direction: column;
+  width: 100vw;
+  height: 50vh;
+  padding: 25vh 0;
+  justify-content: space-around;
+}
 
+#links a{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  font-family: 'Roboto';
+  z-index: 10;
+}
 </style>
 
+<script>
+function burger(){
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('links');
+  var quit = document.getElementById('quit');
+  burger.style.padding = '16px 16px 200vw 200vw';
+  links.style.display = 'flex';
+  quit.style.display = 'inline';
+}
+
+function quit(){
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('links');
+  var quit = document.getElementById('quit');
+  burger.style.padding = '16px 16px 32px 32px';
+  links.style.display = 'none';
+  quit.style.display = 'none';
+}
+</script>
 
 
 
@@ -739,83 +608,75 @@ a {
 
 
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-<link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css" />
-<header class="header" >
+<i id="burger" class="material-icons" onclick="burger()">menu</i>
+<i id="quit" class="material-icons" onclick="quit()">clear</i>
+</div>
+<div class="telefon">
 
-  <a href="/" class="logo">Zanurzemi w Zieleni</a>
+<div id="links">
+  <a href="/">Strona główna</a>
+  <a href="{% url 'apka:topics' %}">Artykuły</a>
+  <a href="{% url 'apka:worth_recommending' %}">Warte polecenia</a>
+  <a href="{% url 'apka:cooperation' %}">Współpracat</a>
+  <a href="{% url 'apka:contact' %}">Kontakt</a>
   
-  <input class="menu-btn" type="checkbox" id="menu-btn" />
-  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-  <ul class="menu" >
- 
-    <li style="margin-top:10px;"><a href="{% url 'apka:topics' %}">Artykuły</a></li>
-	<li style="margin-top:10px;"><a href="{% url 'apka:worth_recommending' %}">Warte polecenia</a></li>
-    <li style="margin-top:10px;"><a href="{% url 'apka:cooperation' %}">Współpraca </a></li>
-    <li style="margin-top:10px;"><a href="{% url 'apka:contact' %}">Kontakt</a></li>
-	<li style="margin-top:5px;"><a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a></li>
-	<li style="margin-top:5px;"><a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a></li>
-	<li style="margin-top:5px;"><a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a></li>
-	<li style="padding:20px;"><form method='post' action="/search/">
-
-				{% csrf_token %}
-				
-				<input style="height: 40px; width: 300px;" type='text' name="srh"  placeholder='Wyszukaj...'/></form></li>
-
- </ul>
-</header>
-
-
-
+</div>
 
 
 
 <center>
 
-<!--
-<div class="telefon">
-			<div class="menu_db" >
-			<a  href="{% url 'apka:home' %}"><img alt="logo"  style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
-			
-			<div class='a_1_t' >
-			
-			<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> ||</span>
-			<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> ||</span>
-			<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
-			<a style="color:white;" href="{% url 'apka:cooperation' %}"> Współpraca  </a> <span style="color:white"> ||</span>
-			<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
-			
-			
-			</div>
 
-			
-			<div class='b_1_t'>
-						<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
-						<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
-						<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
+
+
+		
+
+
+
+					<div class="menu_db" style="background-color:white" >
+					<a  href="{% url 'apka:home' %}"><img alt="logo"  style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
 					
-			</div>
-			<div class='c_1_t'>
+					<!--<div class='a_1_t' >
+					
+					<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> ||</span>
+					<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> ||</span>
+					<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> ||</span>
+					<a style="color:white;" href="{% url 'apka:cooperation' %}"> Współpraca   </a> <span style="color:white"> ||</span>
+					<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
+					
+					
+					</div>-->
 
-				<form method='post' action="/search/">
+					
+					<div class='b_1_t'>
+								<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
+								<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
+								<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
+							
+					</div>
+					<div class='c_1_t'>
 
-				{% csrf_token %}
-				
-				<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>-->
+						<form method='post' action="/search/">
+
+						{% csrf_token %}
+						
+						<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
 
 
-				<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
-				
-				
-				<!-- </form>
-			</div>
-	
-		</div>	
-	
+						<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
+						
+						
+						</form>
+					</div>
+			
+				</div>	
+			
 
-	</div>-->
-<!--
+</div>
+
 <div class="laptop">
 		<div class="menu_db" >
 			<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
@@ -839,30 +700,30 @@ a {
 				<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
 				
 				
-				<!--</form>
+				</form>
 			</div>
 	
 		</div>	
 	
 
-</div>
 
-</center>
+
+
 			<div class='a_1' >
 			
 			<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> |</span>
 			<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> |</span>
 			<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> |</span>
-			<a style="color:white;" href="{% url 'apka:cooperation' %}"> Współpraca   </a> <span style="color:white"> |</span>
+			<a style="color:white;" href="{% url 'apka:cooperation' %}"> Warte polecenia   </a> <span style="color:white"> |</span>
 			<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
 			
 			
 			
 
-			</div>-->
+			</div>
 
 
-
+</div>
 	<!-- gdy nie ma nic podobego w wyszukiwarce -->
 <div style="text-align:justify; border: 1 solid red;" class="container_db_3" >	
 	<center>
