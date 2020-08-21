@@ -815,17 +815,17 @@ function quit(){
 											
 						<div style="text-align:justify">							
 									<form class="form" id="contactForm" action="." method="post">
-												<div class="form-row">
+												<div class="form-row" style="z-index:100;">
 													<label  for="id_first_name">Twoje imię</label>
 													<input style="" type="text" name="first_name" required id="id_first_name" data-error="Wypełnij to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
 												</div>
-												<div class="form-row">
+												<div class="form-row" style="z-index:100;">
 													<label for="id_email">Twój e-mail</label>
 													<input style="" type="email" name="email" required id="id_email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
 												</div>
 										
 												<div class="form-row">
-													<label class="checkbox-cnt">
+													<label class="checkbox-cnt" style="z-index:100;">
 														<input  type="checkbox" name="regulamin_1" id="id_regulamin_1" data-error="Musisz wypełnić pole">
 														<i class="state" aria-hidden="true"></i>
 														<span>Chcę zapisać się do newslettera, a co za tym idzie wyrażam zgodę na otrzymanie na mój adres e-mail informacji o działalności Zanurzeni w zieleni.</span>
@@ -834,8 +834,8 @@ function quit(){
 												<b> Żadnego spamu, masz nasze słowo.</b><br><br>
 												<!-- reCAPTCHA -->
 																			<script src='https://www.google.com/recaptcha/api.js'></script>
-																			<div class="g-recaptcha" data-sitekey="6Lfur8EZAAAAAI4vCl5T8uTlTvu27bswlzOh1U0H"></div><br>
-												<div class="form-row">
+																			<div style="z-index:100;" class="g-recaptcha" data-sitekey="6Lfur8EZAAAAAI4vCl5T8uTlTvu27bswlzOh1U0H"></div><br>
+												<div style="z-index:100;" class="form-row">
 													<button type="submit" class="submit-btn" onclick="confirm('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem. Jeżli to zrobileś to super! ;)')?location.href='/':''">
 														Zapisz się
 													</button>
