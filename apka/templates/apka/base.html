@@ -612,15 +612,7 @@ padding-top:8px;
 
 
 
-.errorlist nonfield
 
-{
-margin-left:-40px;
-padding: 10px;
- box-shadow:0 0 6px red;
- border: 2px solid red;
- font-size:16px;
-}
 </style>
 
 <script>
@@ -788,7 +780,7 @@ function myFunction() {
 	
 	{% endif %}
 	
-	{{ form.non_field_errors }}	
+	<div {{ form.non_field_errors }} style="margin-left:-40px; padding: 10px; box-shadow:0 0 6px green; border: 2px solid green; font-size:16px;" ></div>
 	<!-- Wyszukiwarka -->
 
 	
@@ -898,7 +890,7 @@ function myFunction() {
 									<!--<button type="submit" class="submit-btn" style="background-color:#4CAF50; width:200px; height:40px;" onclick="confirm('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem. Jeżli to zrobileś to super! ;)')?location.href='/':''">
 														Zapisz się
 													</button>-->
-									{{ form.non_field_errors }}		
+								
 									{% csrf_token %}  
 								
 								</form>		
