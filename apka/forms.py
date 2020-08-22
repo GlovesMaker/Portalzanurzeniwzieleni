@@ -20,9 +20,10 @@ class NewsletterCreateForm(forms.ModelForm):
         
 
         if regulamin_1 == False:
+            return HttpResponse('Zaznaczyc pole regulaminu');
             # Only do something if both fields are valid so far.
 
-            raise forms.ValidationError('Zaznaczyc pole regulaminu')
+            #raise forms.ValidationError('Zaznaczyc pole regulaminu')
         
 
         
