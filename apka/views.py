@@ -42,11 +42,11 @@ def home(request):
 
                     if result['success']:
                         form.save()
-                        messages.success(request, 'Zostałeś zapisany do newslettera.')
+                        messages.success(request, 'Zostałeś zapisany do newslettera')
                         #return HttpResponse("ok");
                     else:
                         
-                        messages.error(request, 'Nie zostałeś zapisany do newslettera. Zaznacz pole "Nie jestem robotem"!')
+                        messages.error(request, 'Zaznacz pole "Nie jestem robotem"')
                         #return HttpResponse("Invalid reCAPTCHA. Please try again.");
                    
        
