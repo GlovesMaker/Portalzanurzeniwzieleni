@@ -3,7 +3,7 @@ from .models import Newsletter
 from django import forms
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib import messages
+
 
 class NewsletterCreateForm(forms.ModelForm):
     
@@ -22,8 +22,8 @@ class NewsletterCreateForm(forms.ModelForm):
         if regulamin_1 == False:
             #return HttpResponse('Zaznaczyc pole regulaminu');
             # Only do something if both fields are valid so far.
-            messages.success(self, 'zaznaczyc pole regulaminu')
-            #raise forms.ValidationError('Zaznaczyc pole regulaminu')
+            raise forms.validate('Musisz')
+            raise forms.ValidationError('Zaznaczyc pole regulaminu')
         
 
         
