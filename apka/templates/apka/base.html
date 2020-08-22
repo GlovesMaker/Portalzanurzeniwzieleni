@@ -258,16 +258,16 @@ flex: 1;
 .a_1 {
 flex: 1;
 margin: 0px;
-border: 1px solid red;
-font-size: 20px;
+
+
 	width: 90%;
 	
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid green;
+	/*border: 1px solid green;
 
-	padding: 25px 0px 25px 0px;
-	background-color:black;
+	 padding: 25px 0px 25px 0px;
+	background-color:black; */
 }
 
 .b_1 {
@@ -537,107 +537,104 @@ border: 1px solid black;
 	
 
  
-#burger{
-  position: fixed;
-  right: 0;
-  top: 0;
-  color: black;
-  background: white;
-  font-size: 32px;
-  padding: 16px 16px 32px 32px;
-  border-radius: 0% 0% 0% 100%;
-  transition: 1s;
-  cursor: pointer;
+
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
 }
 
-#quit{
-  position: fixed;
-  top: 0;
-  color: black;
-  font-size: 32px;
-  padding: 16px;
-  display: none;
-  cursor: pointer;
-}
- 
-	
-#links{
-  display: none;
-  flex-direction: column;
-  width: 100vw;
-  height: 50vh;
-  padding: 25vh 0;
-  justify-content: space-around;
-}
-
-#links a{
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
   text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
   color: black;
-  font-size: 2em;
-  font-family: 'Roboto';
-  z-index: 10;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 </style>
 
 <script>
-function burger(){
-  var burger = document.getElementById('burger');
-  var links = document.getElementById('links');
-  var quit = document.getElementById('quit');
-  burger.style.padding = '16px 16px 200vw 200vw';
-  links.style.display = 'flex';
-  quit.style.display = 'inline';
-}
 
-function quit(){
-  var burger = document.getElementById('burger');
-  var links = document.getElementById('links');
-  var quit = document.getElementById('quit');
-  burger.style.padding = '16px 16px 32px 32px';
-  links.style.display = 'none';
-  quit.style.display = 'none';
+
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
 }
 </script>
 
 
 
-
-
-
-
-
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<div class="telefon">
-<i id="burger" class="material-icons" onclick="burger()">menu</i>
-<i id="quit" class="material-icons" onclick="quit()">clear</i>
-
-
-
-<div id="links">
-  <a href="/">Strona główna</a>
-  <a href="{% url 'apka:topics' %}">Artykuły</a>
-  <a href="{% url 'apka:worth_recommending' %}">Warte polecenia</a>
-  <a href="{% url 'apka:cooperation' %}">Współpracat</a>
-  <a href="{% url 'apka:contact' %}">Kontakt</a>
-  
-</div>
-
-
-
-
-
-
-
-
 <center>
+<div class="telefon">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+			<div class="topnav" id="myTopnav">
+			  <a href="/" class="active">Strona główna</a>
+				
+			  <a  href="{% url 'apka:topics' %}">Artykuły</a>
+			  <a href="{% url 'apka:worth_recommending' %}">Warte polecenia</a>
+			  <a href="{% url 'apka:cooperation' %}">Współpracat</a>
+			  <a href="{% url 'apka:contact' %}">Kontakt</a>
+			  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			  </a>
+			</div>
 
 
 
-					<div class="menu_db" style="background-color:white" >
-					<a  href="{% url 'apka:home' %}"><img alt="logo"  style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
+
+
+		<div class="menu_db" style="background-color:white" >
+				<a  href="{% url 'apka:home' %}"><img alt="logo"  style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
 					
 					<!--<div class='a_1_t' >
 					
@@ -665,7 +662,7 @@ function quit(){
 						
 						<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
 
-
+						
 						<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
 						
 						
@@ -677,9 +674,21 @@ function quit(){
 
 </div>
 </center>
+
+
+
+
+
+
+
+
+
+
+
+
 <center>
-	<div class="laptop">
-			<div class="menu_db" >
+<div class="laptop">
+			<div class="menu_db" style="background-color:	black" >
 				<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
 				
 
@@ -697,8 +706,8 @@ function quit(){
 					
 					<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
 
-
-					<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
+					<!--<button type="submit" class="icon-search">Szukaj</button>
+					 <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
 					
 					
 					</form>
@@ -711,12 +720,22 @@ function quit(){
 
 
 				<div class='a_1' >
-				
-				<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> |</span>
+						<div class="topnav" id="myTopnav">
+							  <a href="/" class="active">Strona główna</a>
+								
+							  <a  href="{% url 'apka:topics' %}">Artykuły</a>
+							  <a href="{% url 'apka:worth_recommending' %}">Warte polecenia</a>
+							  <a href="{% url 'apka:cooperation' %}">Współpracat</a>
+							  <a href="{% url 'apka:contact' %}">Kontakt</a>
+							  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+								<i class="fa fa-bars"></i>
+							  </a>
+						</div>
+				<!--<a style="color:white;" href="/"> Strona główna </a> <span style="color:white"> |</span>
 				<a style="color:white;" href="{% url 'apka:topics' %}"> Artykuły  </a> <span style="color:white"> |</span>
 				<a style="color:white;" href="{% url 'apka:worth_recommending' %}"> Warte polecenia   </a> <span style="color:white"> |</span>
 				<a style="color:white;" href="{% url 'apka:cooperation' %}"> Warte polecenia   </a> <span style="color:white"> |</span>
-				<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">
+				<a style="color:white;" href="{% url 'apka:contact' %}"> Kontakt  </a> <span style="color:white">-->
 				
 				
 				
@@ -827,8 +846,8 @@ function quit(){
 													<input style="" type="email" name="email" required id="id_email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
 												</div>
 										
-												<div class="form-row">
-													<label class="checkbox-cnt" style="z-index:-10;">
+												<div class="form-row" style="z-index:-10;">
+													<label class="checkbox-cnt" >
 														<input  type="checkbox" name="regulamin_1" id="id_regulamin_1" data-error="Musisz wypełnić pole">
 														<i class="state" aria-hidden="true"></i>
 														<span>Chcę zapisać się do newslettera, a co za tym idzie wyrażam zgodę na otrzymanie na mój adres e-mail informacji o działalności Zanurzeni w zieleni.</span>
