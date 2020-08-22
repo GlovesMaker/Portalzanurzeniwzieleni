@@ -29,7 +29,7 @@
 	
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	display: flex;
 
 	}
@@ -127,7 +127,7 @@ a:hover
 .container_db div
 
 	{
-	border: 2px solid pink;
+	/* border-right: 2px solid black; */
 	
 	}
 
@@ -140,7 +140,7 @@ a:hover
 	{
 	
 	font-size: 20px;
-	border-bottom: 1px solid black;
+	box-shadow:0 12px 6px -6px #666;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: black;
@@ -236,6 +236,7 @@ border: 1px solid red;
 	{
 flex: 0.7;
 border: 1px solid purple;
+
 	}	
 
 
@@ -264,7 +265,7 @@ margin: 0px;
 	
 	margin-left: auto;
 	margin-right: auto;
-	/*border: 1px solid green;
+	/* border: 1px solid green;
 
 	 padding: 25px 0px 25px 0px;
 	background-color:black; */
@@ -273,22 +274,23 @@ margin: 0px;
 .b_1 {
 flex: 2;
 
-border: 1px solid green;
+/* border: 1px solid green;*/
 margin: 5px;
-padding-top:40px;
+padding-top:10px;
 }
 
 .c_1 {
 flex: 1;
+
+/* border: 1px solid red;*/
 margin: 5px;
-border: 1px solid red;
-padding-top:40px;
+padding-top:10px;
 }	
 	
 .a_1_t {
 flex: 4;
 margin: 5px;
-border: 1px solid blue;
+*/border: 1px solid blue;*/
 font-size: 17px;
 
 }
@@ -296,7 +298,7 @@ font-size: 17px;
 .b_1_t {
 flex: 1;
 
-border: 1px solid blue;
+/* border: 1px solid blue;*/
 margin: 5px;
 
 }
@@ -304,21 +306,21 @@ margin: 5px;
 .c_1_t {
 flex: 2;
 margin: 5px;
-border: 1px solid blue;
+/* border: 1px solid blue;*/
 
 }		
 .a_2 {
 flex: 1;
 margin: 10px;
-border: 1px solid black;
-font-size: 16px;
-padding-top:15px;
+box-shadow:0 0 6px black;
+
+padding-top:8px;
 }
 
 .b_2 {
 flex: 1;
 margin: 10px;
-border: 1px solid black;
+box-shadow:0 0 6px black;
 
 padding-top:8px;
 }
@@ -326,7 +328,8 @@ padding-top:8px;
 .c_2 {
 flex: 1;
 margin: 10px;
-border: 1px solid black;
+box-shadow:0 0 6px black;
+padding-top:8px;
 
 }	
 	
@@ -351,7 +354,8 @@ border: 1px solid black;
 }
 
 .button_db:hover {
-  background-color: #4CAF50;
+  
+  background-color:#4CAF50;
   color: white;
 }
 
@@ -457,7 +461,8 @@ border: 1px solid black;
 
 /* checkbox */
 .form .submit-btn:hover {
-    background: #7EC927;
+    background: #4CAF50;
+	
 }
 .form .checkbox-cnt {
     padding-left:3rem;
@@ -634,7 +639,7 @@ function myFunction() {
 
 
 		<div class="menu_db" style="background-color:white" >
-				<a  href="{% url 'apka:home' %}"><img alt="logo"  style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
+			<a  href="{% url 'apka:home' %}"><img alt="logo"  style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
 					
 					<!--<div class='a_1_t' >
 					
@@ -648,7 +653,7 @@ function myFunction() {
 					</div>-->
 
 					
-					<div class='b_1_t'>
+					<div class='b_1_t' >
 								<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
 								<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
 								<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
@@ -660,7 +665,7 @@ function myFunction() {
 
 						{% csrf_token %}
 						
-						<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
+						<input style="height: 30px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
 
 						
 						<!-- <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
@@ -688,23 +693,23 @@ function myFunction() {
 
 <center>
 <div class="laptop">
-			<div class="menu_db" style="background-color:	black" >
-				<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='130' height='130'></a>
+			<div class="menu_db" style="background-color:	white" >
+				<a  href="{% url 'apka:home' %}"><img style="margin-top:5px; margin-left:5px" src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/Photo_1597603824650.png"  width='50' height='50'></a>
 				
 
-				<div class='b_1' >
-							<a  target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='50' height='50'/></a>
-							<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='50' height='50'/></a>
-							<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='50' height='50'/></a>
+				<div class='b_1'>
+							<a  target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
+							<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
+							<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
 						
 				</div>
-				<div class='c_1'>
+				<div class='c_1' >
 
 					<form method='post' action="/search/">
 
 					{% csrf_token %}
 					
-					<input style="height: 40px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
+					<input style="height: 30px; width: 80%;" type='text' name="srh"  placeholder='Wyszukaj...'/>
 
 					<!--<button type="submit" class="icon-search">Szukaj</button>
 					 <input src="https://analizafinansowa.s3.eu-west-2.amazonaws.com/search-148820_640.png" style="height: 40px;" id="button_search" type='submit' />-->
@@ -780,7 +785,7 @@ function myFunction() {
 
 
 	{% block content %}
-<div class="container_db" >	
+<div class="container_db" style= "box-shadow:0 0 6px black;">	
 	<div style="text-align:justify;" class='a'>
 	<span class="h1_db"> O czym jest portal?</span>
 
@@ -792,7 +797,7 @@ function myFunction() {
 	</div>
 	
 	
-		<div class='b'>
+		<!--<div class='b'>
 			<center>
 				<span class="h1_db">o nas</span><br><br>
 
@@ -801,7 +806,7 @@ function myFunction() {
 				<span class="h1_db">Poznaj</span><br><br>
 	
 			</center>
-		</div>
+		</div>-->
 	
 
 
@@ -824,7 +829,7 @@ function myFunction() {
 		</center>
 	
 	
-<div class="container_db" >
+<div class="container_db" style="box-shadow:0 0 6px black;">
 
 					
 				
@@ -859,7 +864,7 @@ function myFunction() {
 												<b> Żadnego spamu, masz nasze słowo.</b><br><br>
 											
 												<div  class="form-row">
-													<button type="submit" class="submit-btn" onclick="confirm('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem. Jeżli to zrobileś to super! ;)')?location.href='/':''">
+													<button type="submit" class="submit-btn" style="background-color:#4CAF50" onclick="confirm('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem. Jeżli to zrobileś to super! ;)')?location.href='/':''">
 														Zapisz się
 													</button>
 												</div>

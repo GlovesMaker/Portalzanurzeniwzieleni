@@ -5,7 +5,7 @@
 {% block content %}
 
 
-<div class="container_db" style="border: 1px solid purple">
+<div class="container_db"  style="box-shadow:0 12px 6px -6px #666; margin-bottom:20px;">
 <span style="text-align:justify;" class="h1_db">Artykuły</span>
 </div>
 
@@ -19,14 +19,14 @@
 
 		{% for x in topics %}
 			<ol>
-			<a style="margin-left:-20px;" href="{% url 'apka:topic' x.id %}"><button class="button_db">{{ x }} </button></a>
+			<a style="margin-left:-20px;" href="{% url 'apka:topic' x.id %}"><button class="button_db" style="box-shadow:0 0 6px black; border:1px solid black;">{{ x }} </button></a>
 			</ol>
 		{% empty %}
 			<ol> Artykuły są w produkcji </ol>
 		{% endfor %}
 	
 </div>
-	<div class='b'>
+	<div class='b' style="padding-top:15px;">
 			<center>
 				<span class="h1_db">o nas</span><br><br>
 
