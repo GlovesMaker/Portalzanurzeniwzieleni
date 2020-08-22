@@ -3,7 +3,7 @@ from .models import Newsletter
 from django import forms
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from django.contrib import messages
 
 class NewsletterCreateForm(forms.ModelForm):
     
