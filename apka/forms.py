@@ -4,9 +4,6 @@ from django import forms
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from django.shortcuts import render, redirect
-from django.conf import settings
-from django.contrib import messages
 
 class NewsletterCreateForm(forms.ModelForm):
     
@@ -17,16 +14,16 @@ class NewsletterCreateForm(forms.ModelForm):
                   'regulamin_1',]
        
 
-    def clean(request):
+    def clean(self):
         
-        regulamin_1 = request.cleaned_data.get('regulamin_1')
+        regulamin_1 = self.cleaned_data.get('regulamin_1')
         
 
         if regulamin_1 == False:
             # Only do something if both fields are valid so far.
 
-            #raise forms.ValidationError('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem')
-            messages.error(request, 'Zaznaczyc pole regulaminu')
+            raise forms.ValidationError('Zaznaczyc pole regulaminu')
+        
 
         
 
