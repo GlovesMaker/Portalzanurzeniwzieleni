@@ -21,7 +21,7 @@ from django.contrib import messages
 from .forms import NewsletterCreateForm
 
 def home(request):
-
+        topics = Topic.objects.order_by('date_added')       
         form = NewsletterCreateForm()
         
         if request.method == 'POST':
@@ -52,7 +52,7 @@ def home(request):
        
         #context = {'form': form }
 
-	return render(request, 'apka/base.html', {'form': form})
+	return render(request, 'apka/base.html', {'form': form, 'topics': topics})
 	
 		
 

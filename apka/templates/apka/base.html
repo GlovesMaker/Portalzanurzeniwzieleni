@@ -553,7 +553,7 @@ padding-top:8px;
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -879,7 +879,7 @@ function myFunction() {
 													</button>-->
 												
 									{% csrf_token %}  
-									{{ form.errors.regulamin_1 }}
+								
 								</form>		
 							</div>
 	</div>
@@ -888,17 +888,42 @@ function myFunction() {
 									
 </div>								
 							
-													
-									
+												
 
-		
-		
-		
-		
+	<!-- 		 <center style="background-color: #4CAF50;padding: 40px 0 50px;">
+				tagi: <br>
+			{% for x in topics %}
+			
+			<a href="{% url 'apka:topic' x.id %}">{{ x.key_words}}<br> </a>
+			
+		{% empty %}
+			<ol> Artykuły są w produkcji </ol>
+		{% endfor %}
+			</center> -->	
 
 {% endblock content%}	
 
 
+	<!-- MSTART Stopka (5) -->		
 
+		<h2 style="color:white;"> ...</h2>	
+				 <center style="background-color: #333;padding: 40px 0 50px;">
+					<p style="color: white;">&copy; 2020
+						<a style="color: white;" href="/">Zanurzeni w zieleni</a> <span style="color: white;">|</span>
+						<a style="color: white;" href="">Polityka Prywatności</a> 
+						<span style="color: white;">| Wszystkie prawa zastrzeżone |</span>
+						<a style="color: white;" href="mailto:Zanurzeniwzieleni@gmail.com">  </a> 
+						<a href="https://www.google.pl/maps/@51.1076212,17.0325615,14.25z" target="blank" style="color: white"> Wrocław </a></p> 
+						 		<a target='_blank' href='mailto:zanurzeniwzieleni@gmail.com'><img   alt='Follow by Email' title='Follow by Email' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/EMIAL.png' width='30' height='30'/></a>
+								<a target='_blank' href='https://www.facebook.com/Zanurzeni-w-Zieleni-101338568357878/' ><img  alt='Facebook' title='Facebook' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/FB.png' width='30' height='30'/></a>
+								<a target='_blank' href='https://www.instagram.com/zanurzeniwzieleni/' ><img  text-align:right;'  alt='Instagram' title='Instagram' src='https://analizafinansowa.s3.eu-west-2.amazonaws.com/INSTAGRAM.png' width='30' height='30'/></a>
+						<br>
+
+	
+	
+<!-- META Stopka  -->									
+
+		
+		
 
 
