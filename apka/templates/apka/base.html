@@ -609,6 +609,18 @@ padding-top:8px;
     text-align: left;
   }
 }
+
+
+
+.errorlist nonfield
+
+{
+margin-left:-40px;
+padding: 10px;
+ box-shadow:0 0 6px red;
+ border: 2px solid red;
+ font-size:16px;
+}
 </style>
 
 <script>
@@ -776,7 +788,7 @@ function myFunction() {
 	
 	{% endif %}
 	
-	
+	{{ form.non_field_errors }}	
 	<!-- Wyszukiwarka -->
 
 	
