@@ -7,6 +7,8 @@ from .models import Topic
 from .models import Entry
 from django.contrib import messages
 
+from django.http import HttpResponse
+
 import urllib
 import urllib2
 import json

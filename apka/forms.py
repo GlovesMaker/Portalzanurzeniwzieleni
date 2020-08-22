@@ -19,7 +19,7 @@ class NewsletterCreateForm(forms.ModelForm):
         regulamin_1 = self.cleaned_data.get('regulamin_1')
         
 
-        if regulamin_1 == False:
+        if regulamin_1 == True:
             # Only do something if both fields are valid so far.
 
             raise forms.ValidationError('Zaznaczyc pole regulaminu')
