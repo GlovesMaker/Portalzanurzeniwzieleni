@@ -23,8 +23,7 @@ def home(request):
         form = NewsletterCreateForm()
         
         if request.method == 'POST':
-                form = NewsletterCreateForm(request.POST)   
-          
+                form = NewsletterCreateForm(request.POST)          
                 if form.is_valid():
                 
                     recaptcha_response = request.POST.get('g-recaptcha-response')
@@ -41,18 +40,16 @@ def home(request):
 
                     if result['success']:
                         form.save()
-                        messages.success(request, 'Zostałeś zapisany! Do zobaczenia. Oczekuj na wiadomość e-mail w przeciągu 24h!')
+                        messages.success(request, 'Zostałeś zapisany do newslettera.')
                         #return HttpResponse("ok");
                     else:
                         
-                        messages.error(request, 'Nie zostałeś zapisany! Zaznacz pole "Nie jestem robotem"!')
+                        messages.error(request, 'Nie zostałeś zapisany do newslettera. Zaznacz pole "Nie jestem robotem"!')
                         #return HttpResponse("Invalid reCAPTCHA. Please try again.");
                    
        
         #context = {'form': form }
-      
-        
-        
+
 	return render(request, 'apka/base.html', {'form': form})
 	
 		
