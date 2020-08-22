@@ -22,7 +22,7 @@ class NewsletterCreateForm(forms.ModelForm):
         if regulamin_1 == False:
             #return HttpResponse('Zaznaczyc pole regulaminu');
             # Only do something if both fields are valid so far.
-            raise forms.validate('Musisz')
+          
             raise forms.ValidationError('Zaznaczyc pole regulaminu')
         
 
@@ -31,7 +31,7 @@ class NewsletterCreateForm(forms.ModelForm):
         #else:
             #raise forms.validate('Musisz')
             #raise forms.ValidationError('Zostales zarejstrowany prawidlowo')
-            #return render(self, 'apka/created.html')
+    return render(self, 'apka/base.html')
 
 
         
