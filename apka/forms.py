@@ -26,7 +26,7 @@ class NewsletterCreateForm(forms.ModelForm):
             # Only do something if both fields are valid so far.
 
             #raise forms.ValidationError('Musisz zaznaczyc pole regulaminu nr 1 oraz pole nie jestem robotem')
-            messages.error(request, 'Zaznaczyc pole regulaminu')
+            messages.error(self, 'Zaznaczyc pole regulaminu')
 
         
 
