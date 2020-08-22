@@ -761,7 +761,7 @@ function myFunction() {
 		
 		{% for k in messages %}
 		<ol >
-		<div  style="margin-left:-40px; padding: 10px; box-shadow:0 0 6px red; border: 2px solid red; font-size:16px;" >{{k}}</div>
+		<div {% if k.tags == "success"  %} style="margin-left:-40px; padding: 10px; box-shadow:0 0 6px green; border: 2px solid green; font-size:16px;"  {% else %} {% endif %} style="margin-left:-40px; padding: 10px; box-shadow:0 0 6px red; border: 2px solid red; font-size:16px;" >{{k}}</div>
 		</ol>
 		{% endfor %}
 	
@@ -824,13 +824,13 @@ function myFunction() {
 
 			<div class="h1_db">Newsletter</div>
 			
-				{% if messages %}
+				<!--{% if messages %}
 							<div >
 							{% for message in messages %}
 							<p {% if message.tags == "success"  %} class="alert alert-success" {% else %} class="alert alert-danger"{% endif %}>{{ message }}</p>
 							{% endfor %}
 							</div>
-						{% endif %}
+						{% endif %}-->
 		</center>
 	
 	
