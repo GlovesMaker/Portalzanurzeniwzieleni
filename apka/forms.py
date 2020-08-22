@@ -31,7 +31,7 @@ class NewsletterCreateForm(forms.ModelForm):
         #else:
             #raise forms.validate('Musisz')
             #raise forms.ValidationError('Zostales zarejstrowany prawidlowo')
-    return render(self, 'apka/base.html')
+            #return render(self, 'apka/base.html')
 
 
         
