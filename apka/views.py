@@ -111,4 +111,8 @@ def cooperation(request):
 
 def worth_recommending(request):
 
-        return render(request,'apka/worth_recommending.html')       
+        return render(request,'apka/worth_recommending.html')
+
+def sitemap(request):
+
+        return render(request,'apka/sitemap.xml')  
